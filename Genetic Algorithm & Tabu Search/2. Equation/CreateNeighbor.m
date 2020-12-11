@@ -1,0 +1,20 @@
+function NewSol=CreateNeighbor(Sol)
+x=Sol.pos;
+n=randi(4);
+i=randsample(2,1);
+if(n==1)
+    x(i)=rand+x(1);
+end
+if(n==2)
+     x(i)=rand+x(2); 
+end
+if(n==3)
+     x(i)=x(1)-rand;
+end
+if(n==4)
+     x(i)=x(2)-rand;
+end
+NewSol.pos=x;
+NewSol.m=i;
+NewSol.fit=fitness(NewSol.pos);
+end
